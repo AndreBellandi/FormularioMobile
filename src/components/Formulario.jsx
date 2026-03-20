@@ -16,7 +16,6 @@ export default function Formulario() {
                 value={nome}
                 onChangeText={setNome}
             />
-            <Text>{nome}</Text>
 
             <TextInput
                 style={styles.input}
@@ -24,7 +23,6 @@ export default function Formulario() {
                 value={curso}
                 onChangeText={setCurso}
             />
-            <Text>{curso}</Text>
 
             <TextInput
                 style={styles.input}
@@ -32,15 +30,15 @@ export default function Formulario() {
                 value={disciplina}
                 onChangeText={setDisciplina}
             />
-            <Text>{disciplina}</Text>
 
             <TextInput
-                style={styles.input}
+                style={styles.inputDescricao}
                 placeholder="Descrição:"
                 value={descricao}
+                numberOfLines={3}
+                multiline
                 onChangeText={setDescricao}
             />
-            <Text>{descricao}</Text>
         </SafeAreaView>
     );
 }
@@ -61,5 +59,17 @@ const styles = StyleSheet.create({
     borderColor: '#ddd',
     fontSize: 16,
   },
+
+   inputDescricao: {
+    backgroundColor: '#b49ae8',
+    padding: 10,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: '#ddd',
+    fontSize: 16,
+    height: 100,
+    textAlignVertical: 'top',
+  }
+
 
 });
