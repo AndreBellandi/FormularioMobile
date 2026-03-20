@@ -1,5 +1,5 @@
 import {useState} from "react";
-import { Text, TextInput, StyleSheet } from "react-native";
+import { Text, Button, TextInput, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Formulario() {
@@ -7,6 +7,7 @@ export default function Formulario() {
     const [curso, setCurso] = useState('');
     const [disciplina, setDisciplina] = useState('');
     const [descricao, setDescricao] = useState('');
+    const [mostrarResultado, setMostrarResultado] = useState(false);
 
     return (
         <SafeAreaView >
@@ -39,6 +40,22 @@ export default function Formulario() {
                 multiline
                 onChangeText={setDescricao}
             />
+            <Button
+                title="Enviar"
+                onPress={() => {
+                    setMostrarResultado(true);
+                }}
+            />
+
+            {mostrarResultado && (
+                <>
+                    <Text style={styles.resultado}>Nome: {nome}</Text>
+                    <Text style={styles.resultado}>Curso: {curso}</Text>
+                    <Text style={styles.resultado}>Disciplina: {disciplina}</Text>
+                    <Text style={styles.resultado}>Descrição: {descricao}</Text>
+                </>
+            )}
+
         </SafeAreaView>
     );
 }
@@ -69,7 +86,11 @@ const styles = StyleSheet.create({
     fontSize: 16,
     height: 100,
     textAlignVertical: 'top',
-  }
-
+  },
+  resultado: {
+    fontSize: 18,
+    marginTop: 10,
+    color: '#00ff22',
+  },
 
 });
