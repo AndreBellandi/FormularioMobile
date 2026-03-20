@@ -41,6 +41,7 @@ export default function Formulario() {
                 onChangeText={setDescricao}
             />
             <Button
+                color={'#ff0000'}
                 title="Enviar"
                 onPress={() => {
                     setMostrarResultado(true);
