@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import { Text, Button, TextInput, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -8,7 +8,10 @@ export default function Formulario() {
     const [disciplina, setDisciplina] = useState('');
     const [descricao, setDescricao] = useState('');
     const [mostrarResultado, setMostrarResultado] = useState(false);
-
+ 
+    useEffect(() => {
+       console.log("Aplicativo iniciado com sucesso!");
+  }, []);
     return (
         <SafeAreaView >
             <TextInput
